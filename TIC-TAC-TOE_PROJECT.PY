@@ -1,9 +1,9 @@
-#   ---------------------------------------------------------- TIC-TAC-TOE-GAME-PROJECT --------------------------------------------------
+#  ---------------------------------------------------------- TIC-TAC-TOE-GAME-PROJECT --------------------------------------------------
 
 
-# WRITE FUNCTION display game structure
+# WRITE FUNCTION Display Dame Structure
 
-tstboard=['#','','','','','X','O','X','O','X']
+tstboard=['#','X','O','X','O','X','O','X','O','X']
 def display(board):
     
     """
@@ -22,11 +22,12 @@ def display(board):
 
 
 
-# write the FUnction to choice (X OR O) player 1 and player 2
+# Write The Function To Choice (X OR O) for player 1 and player 2
 
 def player_choice():
     
-    """[chose marker as player 1 or player 2]
+    """
+    [chose marker as player 1 or player 2]
 
     Returns:
         [TUPLE]: [we can return 2 value (player 1, player 2) we can done with TUPLE UNPACKING]
@@ -41,7 +42,7 @@ def player_choice():
             print("\nSORRY INVALID INPUT! Choose (X OR O) ")
 
     if marker=='X':
-        return ('X','O')
+        return ('X','O')  # Return a tuple for both player because we can be UNPACKING a tuple
     else:
         return ('O','X')
 
@@ -54,7 +55,8 @@ def player_choice():
 
 def replacement(board,marker,pos):
     
-    """[user choose position and that position in board is replaced with as per player's MARKES]
+    """
+    [user choose position and that position in board is replaced with as per player's MARKES]
 
     Args:
         board ([list]): [ LIST OF BOARD strucuture]
@@ -72,7 +74,8 @@ def replacement(board,marker,pos):
 
 def win_chk(board,marker):
     
-    """[take (Board, marker) and check it possible conditions as per below given ]
+    """
+    [take (Board, marker) and check it possible conditions as per below given ]
 
     Args:
         board ([LIST]): [DISPLAY BOARD]
@@ -100,13 +103,14 @@ def win_chk(board,marker):
 import random
 def choose_first():
     
-    """[Who go first to play a game (player 1, player 2)]
+    """
+    [Who go first to play a game (player 1, player 2)]
 
     Returns:
         [STRING]: [use Random INT (0,1) if O (Player 1) or 1 (Player 2)]
     """
-    rand=random.randint(0,1)
-    if rand==0:
+    rd=random.randint(0,1)
+    if rd==0:
         return "Player 1"
     else:
         return "Player 2"
@@ -114,11 +118,12 @@ def choose_first():
 #print(choose_first())
 
 
-# TO CHECK A IN BOARD EMPTY SPACE IS YES OR NOT
+# TO CHECK IN BOARD EMPTY SPACE IS YES OR NOT IF YES RETURN TRUE ELSE FALSE
 
 def chk_space(board,position):
     
-    """[check a space in board if space are here return True ]
+    """
+    [check a space in board if space are here return True ]
 
     Args:
         board ([LIST]): [displayed board ]
@@ -147,15 +152,17 @@ def full_board_chk(board):
     
     for i in range(1,10):
         if chk_space(board,i):
-            return False
+            return False       # FOR BOARD IS EMPTY
         
     return True # BOARD IS FULL
 
-# WRITE A FUNC ASK A PLAYER TO NEXT POSITION (AS A NUMBER 1 TO 9) 
+
+# WRITE A FUNC ASK A PLAYER TO NEXT POSITION (AS A Position 1 TO 9) 
 
 def player_position(board):
     
-    """[take player position as per board structure ]
+    """
+    [take player position as per board structure ]
 
     Args:
         board ([LIST]): [displayed board structure]
@@ -197,10 +204,10 @@ def replay():
     return choose=='Y'
 
 
-# -------------------------------------------------------- GAME LOGIC PART --------------------------------------------------------
+#  -------------------------------------------------------- GAME LOGIC PART --------------------------------------------------------
 
 while True:
-    print("\nWELCOM TO TIC TAC TOE GAME ")
+    print("\nWELCOME TO TIC TAC TOE GAME ")
     
     nw_board=[' ']*10
     
