@@ -1,7 +1,7 @@
 #  ---------------------------------------------------------- TIC-TAC-TOE-GAME-PROJECT --------------------------------------------------
 
 
-# WRITE FUNCTION Display Dame Structure
+# WRITE FUNCTION Display Game Structure
 
 tstboard=['#','X','O','X','O','X','O','X','O','X']
 def display(board):
